@@ -1,62 +1,54 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Notification
+Projeto elaborado utilizando o framework Laravel para estudo de SOLID.
 
-## About Laravel
+# Sobre
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+SOLID são os seguintes cinco princípios da programação orientada a objetos:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<b>1- Single Responsiblity Principle</b>
+Este projeto segue este princípio pois cada classe tem uma resposabilidade única.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<b>2- Open-Closed Principle</b>
+Neste projeto este princípio é utilizado por utilizar as interfaces e suas implementações. Por exemplo:
+- Os Controllers não se relacionam diretamente com as Models, temos uma interface de Repositórios entre essas duas camadas.
+- A facade Http do Laravel não é utilizada diretamente.
 
-## Learning Laravel
+<b>3- Liskov Substitution Principle</b>
+Ainda não se aplica (não foi utilizado herança)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<b>4- Interface Segregation Principle</b>
+Todos os métodos implementados por meio de uma inteface são necessários.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<b>5- Dependency Inversion Principle</b>
+Com exceção dos objetos próprios as injeções de dependencia foram feitas com abstrações.
 
-## Laravel Sponsors
+## Requisitos
+- **[PHP](https://www.php.net/)** instalado (testado com a v8.0.5). 
+- **[Git](https://git-scm.com/)** instalado. 
+- **[Composer](https://getcomposer.org/)** instalado.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Instalação
+Para instalar e utilizar este projeto basta seguir os seguintes passos:
+1. Clone o repositório:</br>
+```git clone https://github.com/lfgalindo/notification```
 
-### Premium Partners
+2. Entre na pasta do projeto, crie um arquivo *.env* e configure um banco de dados:</br>
+```cd notification && cp .env.example .env```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+3. Se for usar o sqlite (sugerido), crie o banco:</br>
+```touch ./database/database.sqlite```
 
-## Contributing
+4. Instale as dependências utilizando o composer:</br>
+```composer install```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. Utilizando o artisanm, gere a key e crie as tabelas do banco de dados:</br>
+```php artisan key:generate && php artisan migrate```
 
-## Code of Conduct
+6. Execute o projeto:</br>
+```php artisan serve```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+7. Concluído!!!
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Autor
+[Luiz Felipe Magalhães Galindo](https://github.com/lfgalindo) <<lfgalindo@live.com>>
