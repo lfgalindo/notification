@@ -3,12 +3,11 @@
 namespace App\Repositories;
 
 use App\Libraries\Person;
+use App\Repositories\DB\AllDB;
 
-interface PersonRepository
+interface PersonRepository extends AllDB
 {
     public function find(string $personId): ?Person;
-
-    public function all(): array;
 
     public function save(Person $person): bool;
 }
